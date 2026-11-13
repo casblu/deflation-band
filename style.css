@@ -148,3 +148,5 @@ main,footer{position:relative;z-index:2}
   .reveal{opacity:1;transform:none;filter:none}
   .decay-line{stroke-dashoffset:0}.decay-area{opacity:1}
 }
+/* keep hero sigil animations pivoting on its exact center (0,0) */
+.sigil .spin-slow,.sigil .breathe{transform-box:view-box;transform-origin:0 0}
