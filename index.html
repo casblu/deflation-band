@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DEFLATION — Financial Doom</title>
+<meta name="description" content="Deflation: a conceptual doom / sludge / funeral doom project about inflation, broken money, and value returning to ash. A SIVYIS Corp project.">
+<meta name="theme-color" content="#070505">
+<meta property="og:title" content="DEFLATION — Financial Doom">
+<meta property="og:description" content="Hymns for a currency in collapse. Doom · Sludge · Funeral Doom.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070505'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%23c9a24a' stroke-width='3'/%3E%3Cpath d='M14 20h36L32 50z' fill='none' stroke='%23e2541c' stroke-width='3'/%3E%3Crect x='27' y='27' width='10' height='10' fill='%23c9a24a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- SVG filters: rough/burnt edges & distressed type -->
+<svg class="defs" aria-hidden="true" width="0" height="0">
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="4" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9"/>
+  </filter>
+  <filter id="distress" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="speck"/>
+    <feColorMatrix in="speck" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 3.8" result="mask"/>
+    <feComposite in="SourceGraphic" in2="mask" operator="in" result="eaten"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="11" result="warp"/>
+    <feDisplacementMap in="eaten" in2="warp" scale="6"/>
+  </filter>
+  <filter id="burnt" x="-3%" y="-3%" width="106%" height="106%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="5" seed="21" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="22"/>
+  </filter>
+</svg>
+
+<canvas id="embers" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <a href="#top" class="nav-mark" aria-label="Deflation home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M13 19h38L32 52z" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="27.5" y="25" width="9" height="9" fill="currentColor"/></svg>
+  </a>
+  <div class="nav-links">
+    <a href="#concept">Concept</a><a href="#sound">Sound</a><a href="#rite">Rite</a><a href="#ash">Joss Paper</a><a href="#ledger">Ledger</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="sigil-wrap" aria-hidden="true">
+    <svg class="sigil" viewBox="-300 -300 600 600">
+      <defs>
+        <path id="ring-text" d="M0,-238 a238,238 0 1,1 -0.1,0"/>
+        <radialGradient id="coreGlow"><stop offset="0" stop-color="#ff7a2a" stop-opacity=".55"/><stop offset=".6" stop-color="#8a1d0b" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      </defs>
+      <circle r="290" fill="url(#coreGlow)"/>
+      <g class="spin-slow" stroke="#c9a24a" fill="none" stroke-opacity=".55">
+        <circle r="262" stroke-width="1"/>
+        <circle r="252" stroke-width="3" stroke-dasharray="2 9"/>
+        <circle r="214" stroke-width="1"/>
+        <text fill="#c9a24a" fill-opacity=".6" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="6"><textPath href="#ring-text">PRINT · BORROW · SPEND · DEBASE · INFLATE · OBEY · PRINT · BORROW · SPEND · DEBASE · INFLATE · RETURN TO ASH ·</textPath></text>
+      </g>
+      <g class="spin-rev" stroke="#e2541c" fill="none" stroke-width="1.6" stroke-opacity=".75">
+        <path d="M-185,-107 L185,-107 L0,214 Z"/>
+        <path d="M-185,107 L185,107 L0,-214 Z" stroke-opacity=".25"/>
+        <circle r="107" stroke="#c9a24a" stroke-opacity=".6"/>
+      </g>
+      <g class="breathe">
+        <circle r="70" fill="none" stroke="#c9a24a" stroke-width="2.5"/>
+        <rect x="-22" y="-22" width="44" height="44" fill="none" stroke="#c9a24a" stroke-width="2.5"/>
+        <path d="M-60,-150 L-25,-60 L10,-95 L40,10 L75,-20 L120,120" fill="none" stroke="#ff6a1f" stroke-width="2" stroke-opacity=".55"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="hero-kicker reveal">Doom · Sludge · Funeral Doom</p>
+  <h1 class="band" aria-label="Deflation">
+    <span class="band-glow" aria-hidden="true">Deflation</span>
+    <span class="band-ink">Deflation</span>
+  </h1>
+  <p class="tagline reveal">Hymns for a currency in collapse.<br><em>All value returns to ash.</em></p>
+  <a class="descend" href="#concept"><span>descend</span><i></i></a>
+</header>
+
+<div class="litany" aria-hidden="true">
+  <div class="litany-track">
+    <span>the printer never sleeps ✕ your savings melt in the fire ✕ debt is the new god ✕ the long run has arrived ✕ paper burns ✕ value returns to ash ✕ </span>
+    <span>the printer never sleeps ✕ your savings melt in the fire ✕ debt is the new god ✕ the long run has arrived ✕ paper burns ✕ value returns to ash ✕ </span>
+  </div>
+</div>
+
+<!-- ============ CONCEPT ============ -->
+<section id="concept" class="chapter">
+  <div class="chapter-head reveal">
+    <span class="numeral">I</span>
+    <h2>The Concept</h2>
+    <p class="sub">Financial doom</p>
+  </div>
+
+  <blockquote class="epigraph reveal">
+    <p>“In the long run we are all dead.”</p>
+    <cite>John Maynard Keynes, <i>A Tract on Monetary Reform</i>, 1923</cite>
+  </blockquote>
+
+  <div class="prose two-col">
+    <p class="reveal dropcap">Deflation is a requiem for money. Every song is a slow funeral for a currency that was promised to hold its value and quietly didn’t: debt rolled into more debt, money printed to cover the printing, and savings melting into the price of bread.</p>
+    <p class="reveal">The band takes its aim at the Keynesian creed of spend now, borrow forever, and let the long run take care of itself. Deflation plays the long run. It is the hangover after the stimulus, the bill that finally arrives, the hour when paper wealth is weighed and found to be paper.</p>
+    <p class="reveal">The name is a curse and a prophecy at once. Inflation is the fever. Deflation is what is left when the fever breaks: prices falling back to earth, illusions collapsing, and the ash of a thousand paper promises drifting down over the stage.</p>
+  </div>
+
+  <figure class="decay reveal" aria-label="Illustration of a currency's purchasing power falling over time">
+    <svg viewBox="0 0 800 300" preserveAspectRatio="none" class="decay-svg">
+      <defs>
+        <linearGradient id="decayFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2541c" stop-opacity=".35"/><stop offset="1" stop-color="#e2541c" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g stroke="#3a2a22" stroke-width="1"><line x1="0" y1="75" x2="800" y2="75"/><line x1="0" y1="150" x2="800" y2="150"/><line x1="0" y1="225" x2="800" y2="225"/></g>
+      <path class="decay-area" d="M0,28 C120,32 170,40 230,70 C300,105 330,150 420,185 C520,222 600,250 800,272 L800,300 L0,300 Z" fill="url(#decayFill)"/>
+      <path class="decay-line" pathLength="1" d="M0,28 C120,32 170,40 230,70 C300,105 330,150 420,185 C520,222 600,250 800,272" fill="none" stroke="#ff6a1f" stroke-width="3"/>
+    </svg>
+    <figcaption>According to the U.S. Bureau of Labor Statistics CPI, a dollar from 1913 buys roughly three cents’ worth of goods today. The curve above is illustrative; the slow bleed is real.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ SOUND ============ -->
+<section id="sound" class="chapter">
+  <div class="chapter-head reveal">
+    <span class="numeral">II</span>
+    <h2>The Sound</h2>
+    <p class="sub">Tuned to the floor</p>
+  </div>
+
+  <div class="wave-wrap reveal" aria-hidden="true"><canvas id="wave"></canvas></div>
+
+  <div class="elements">
+    <article class="element reveal">
+      <span class="el-glyph">⟁</span>
+      <h3>The Scream</h3>
+      <p>Harsh, black-metal-style shrieks: the voice of the debtor, the saver, the bag-holder. Raw, ragged and inhuman, howling from the top of the mix.</p>
+    </article>
+    <article class="element reveal">
+      <span class="el-glyph">◯</span>
+      <h3>The Chant</h3>
+      <p>Low, clean, droning song set against the scream. Half dirge, half invocation, it is the voice of the ritual leader reading the ledger aloud.</p>
+    </article>
+    <article class="element reveal">
+      <span class="el-glyph">▽</span>
+      <h3>The Weight</h3>
+      <p>Guitars and bass detuned almost to the floor, buried in fuzz and distortion. Thick, rotten tone that hangs in the air like smoke after a fire.</p>
+    </article>
+    <article class="element reveal">
+      <span class="el-glyph">⧗</span>
+      <h3>The Slow Bleed</h3>
+      <p>Crushing, glacial tempos borrowed from sludge and funeral doom. Each riff decays the way purchasing power does: too slowly to notice until everything is gone.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ RITE ============ -->
+<section id="rite" class="chapter rite">
+  <div class="chapter-head reveal">
+    <span class="numeral">III</span>
+    <h2>The Rite</h2>
+    <p class="sub">Stage presence</p>
+  </div>
+
+  <div class="rite-grid">
+    <div class="robe reveal" aria-hidden="true">
+      <svg viewBox="0 0 300 520">
+        <defs>
+          <linearGradient id="robeG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#16100e"/><stop offset="1" stop-color="#040303"/></linearGradient>
+          <radialGradient id="robeHalo"><stop offset="0" stop-color="#ff6a1f" stop-opacity=".5"/><stop offset="1" stop-color="#ff6a1f" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="150" cy="120" r="140" fill="url(#robeHalo)" class="halo"/>
+        <g filter="url(#rough)">
+          <path d="M150 40 C112 40 96 78 98 118 C70 150 56 210 50 290 C42 380 30 450 16 520 L284 520 C270 450 258 380 250 290 C244 210 230 150 202 118 C204 78 188 40 150 40 Z" fill="url(#robeG)" stroke="#2b1d16" stroke-width="2"/>
+          <path d="M150 64 C126 64 118 92 120 122 C130 140 170 140 180 122 C182 92 174 64 150 64 Z" fill="#000"/>
+          <path d="M150 150 L150 520" stroke="#2b1d16" stroke-width="2"/>
+        </g>
+        <g stroke="#c9a24a" fill="none" stroke-width="1.5" opacity=".75" class="robe-sigil">
+          <circle cx="150" cy="250" r="34"/><path d="M122 234h56L150 284z"/><rect x="144" y="244" width="12" height="12" fill="#c9a24a"/>
+        </g>
+        <circle cx="140" cy="110" r="2.2" fill="#ff7a2a" class="eye"/><circle cx="160" cy="110" r="2.2" fill="#ff7a2a" class="eye"/>
+      </svg>
+    </div>
+
+    <div class="rite-text">
+      <p class="reveal lead">On stage, Deflation is not a band playing songs. It is a congregation performing a rite.</p>
+      <p class="reveal">The members appear in long black robes, hooded and faceless, like shamans of a collapsing economy. The imagery is deliberately occult and unsettling, sigils, candles, smoke, and inverted signs of wealth, because the true religion being exorcised is the worship of easy money.</p>
+      <ol class="order">
+        <li class="reveal"><b>Procession</b><span>Robed figures enter through smoke as the first drone swells.</span></li>
+        <li class="reveal"><b>Invocation</b><span>The chant calls up the spirits of every currency that died before ours.</span></li>
+        <li class="reveal"><b>The Ledger</b><span>Debts are read aloud and answered by the scream.</span></li>
+        <li class="reveal"><b>The Burning</b><span>Paper value is offered to the fire.</span></li>
+        <li class="reveal"><b>Ash</b><span>Silence, embers, and the slow fall of what remains.</span></li>
+      </ol>
+      <p class="reveal small">The order of the rite above describes the stage concept, not a fixed setlist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASH / JOSS PAPER ============ -->
+<section id="ash" class="chapter ash">
+  <div class="chapter-head reveal">
+    <span class="numeral">IV</span>
+    <h2>Burning Money</h2>
+    <p class="sub">Ntawv nyiaj · the Hmong root</p>
+  </div>
+
+  <div class="ash-grid">
+    <div class="burn-stage reveal">
+      <canvas id="paper" aria-label="A sheet of gold-leafed spirit paper slowly burning to ash as you scroll" role="img"></canvas>
+      <p class="burn-hint">scroll to burn</p>
+    </div>
+    <div class="prose">
+      <p class="reveal dropcap">The idea of burning money did not start with this band. It comes from home.</p>
+      <p class="reveal">In Hmong tradition, families offer <em>ntawv nyiaj</em>, paper spirit money, to those who have passed on. At funerals, the <em>qeej</em> plays <em>Hlawv Ntawv</em>, the song that accompanies the burning of paper and incense for the deceased. Gold and silver paper is folded into small boats and ingots, and at the New Year families call the household’s souls home and send spirit money to the ancestors, who in return watch over the living.</p>
+      <p class="reveal">In that ritual, burning paper is an act of love and care: wealth is sent onward so that the ancestors are provided for on their journey. It is sacred, and Deflation treats it that way.</p>
+      <p class="reveal">The band’s imagery grows from that inheritance and turns it toward the present. If paper can be burned and carried to the spirit world, what is our own paper really worth? Every fiat note is already being quietly burned by inflation, its value drifting up the chimney one percent at a time. Deflation sets that burning on stage, where everyone can watch the paper turn to ash.</p>
+      <p class="reveal note">The occult, “satanic” imagery belongs to the band’s critique of debt and false wealth. It is not a description of Hmong spiritual practice, which the band honors as the ancestral rite its imagery grows from.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEDGER ============ -->
+<section id="ledger" class="chapter ledger">
+  <div class="chapter-head reveal">
+    <span class="numeral">V</span>
+    <h2>The Ledger</h2>
+    <p class="sub">Releases &amp; rites</p>
+  </div>
+
+  <div class="ledger-book reveal">
+    <div class="ledger-row">
+      <span class="lr-label">Releases</span>
+      <span class="lr-dots"></span>
+      <span class="lr-val">Coming soon</span>
+    </div>
+    <div class="ledger-row">
+      <span class="lr-label">Live rites</span>
+      <span class="lr-dots"></span>
+      <span class="lr-val">Coming soon</span>
+    </div>
+    <div class="ledger-row">
+      <span class="lr-label">Offerings</span>
+      <span class="lr-dots"></span>
+      <span class="lr-val">Coming soon</span>
+    </div>
+    <p class="ledger-foot">The first rite has not yet been recorded. The fire is being prepared.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <svg class="foot-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 19h38L32 52z" fill="none" stroke="currentColor" stroke-width="2"/><rect x="27.5" y="25" width="9" height="9" fill="currentColor"/></svg>
+  <p class="foot-name">Deflation</p>
+  <p class="foot-line">Doom · Sludge · Funeral Doom &nbsp;—&nbsp; all value returns to ash</p>
+  <p class="foot-corp">A SIVYIS Corp project</p>
+  <p class="foot-copy">© 2026 Deflation</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
